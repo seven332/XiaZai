@@ -42,7 +42,7 @@ public class XiaZaiController {
     if (!occupied) {
       occupied = true;
     } else {
-      throw new IllegalStateException("The DownloadController is already occupied.");
+      throw new IllegalStateException("The XiaZaiController is already occupied.");
     }
   }
 
