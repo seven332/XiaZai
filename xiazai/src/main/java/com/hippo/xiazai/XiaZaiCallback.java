@@ -40,7 +40,7 @@ public interface XiaZaiCallback {
    * @param read read byte in total
    * @param content content length, -1 for unknown
    */
-  void onDownloading(int n, long read, long content);
+  void onProgress(int n, long read, long content);
 
   /**
    * Called if download cancelled.

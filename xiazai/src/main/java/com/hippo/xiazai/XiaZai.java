@@ -142,7 +142,7 @@ public class XiaZai {
         }
 
         if (callback != null) {
-          callback.onDownloading(n, read, content);
+          callback.onProgress(n, read, content);
         }
       }
 
