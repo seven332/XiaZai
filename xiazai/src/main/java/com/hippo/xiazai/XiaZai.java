@@ -95,11 +95,6 @@ public class XiaZai {
   @State
   public int xiazai(@NonNull Request request, @NonNull XiaZaiDestination dest,
       @Nullable XiaZaiController controller, @Nullable XiaZaiCallback callback) {
-    // Occupy the XiaZaiController
-    if (controller != null) {
-      controller.occupy();
-    }
-
     Call call = null;
     Response response = null;
     OutputStream os = null;
@@ -107,6 +102,11 @@ public class XiaZai {
     Throwable exception = null;
 
     try {
+      // Occupy the XiaZaiController
+      if (controller != null) {
+        controller.occupy();
+      }
+
       if (controller != null && controller.isCancelled()) {
         return STATE_CANCELLED;
       }
