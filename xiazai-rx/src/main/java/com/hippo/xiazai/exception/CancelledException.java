@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Hippo Seven
+ * Copyright 2017 Hippo Seven
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,5 +14,18 @@
  * limitations under the License.
  */
 
-include ':xiazai'
-include ':xiazai-rx'
+package com.hippo.xiazai.exception;
+
+/*
+ * Created by Hippo on 1/1/2017.
+ */
+
+/**
+ * Thrown if download cancelled.
+ */
+public class CancelledException extends Exception {
+
+  public CancelledException() {
+    super("Cancelled");
+  }
+}

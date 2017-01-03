@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Hippo Seven
+ * Copyright 2017 Hippo Seven
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,5 +14,36 @@
  * limitations under the License.
  */
 
-include ':xiazai'
-include ':xiazai-rx'
+package com.hippo.xiazai;
+
+/*
+ * Created by Hippo on 1/1/2017.
+ */
+
+/**
+ * Simple download progress wrapper.
+ */
+public class XiaZaiProgress {
+
+  private long n;
+  private long read;
+  private long content;
+
+  public XiaZaiProgress(long n, long read, long content) {
+    this.n = n;
+    this.read = read;
+    this.content = content;
+  }
+
+  public long n() {
+    return n;
+  }
+
+  public long read() {
+    return read;
+  }
+
+  public long content() {
+    return content;
+  }
+}
