@@ -27,6 +27,7 @@ import okhttp3.HttpUrl;
 import okhttp3.Request;
 import rx.Observable;
 import rx.Scheduler;
+import rx.schedulers.Schedulers;
 
 public final class XiaZaiTask {
 
@@ -140,6 +141,17 @@ public final class XiaZaiTask {
     public Builder destination(XiaZaiDestination dest) {
       this.dest = dest;
       return this;
+    }
+
+    /**
+     * Set emitting interval of {@link XiaZaiProgress} in milliseconds.
+     * Keep emitting {@code XiaZaiProgress(0, 0, -1)} before actually starting downloading.
+     * Use {@link Schedulers#computation()} as default.
+     *
+     * @see #interval(long, TimeUnit, Scheduler)
+     */
+    public Builder interval(long interval, TimeUnit unit) {
+      return interval(interval, unit, Schedulers.computation());
     }
 
     /**
